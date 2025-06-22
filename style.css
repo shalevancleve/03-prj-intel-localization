@@ -1,0 +1,441 @@
+/* Import Inter and Roboto Mono from Google Fonts for Intel branding */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* Set a simple, clean font for the whole page */
+body {
+  font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+  background-color: #f5f7fa; /* Light gray background */
+  color: #222;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Use Inter font for all headings (Intel branding) */
+h1, h2, h3 {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+/* Header styles with Intel blue gradient (Intel branding) */
+header {
+  background: linear-gradient(90deg, #0071c5 60%, #00a6e0 100%);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Main content area styling */
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Link styles using Intel blue (Intel branding) */
+a {
+  color: #0071c5;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button styles using Intel blue (Intel branding) */
+button, .btn {
+  background-color: #0071c5;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+button:hover, .btn:hover {
+  background-color: #005b99;
+}
+
+/* Footer styling */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.95em;
+}
+
+/* Navigation bar styling */
+nav {
+  background-color: #e6e9ee;
+  padding: 10px 0;
+  text-align: center;
+}
+nav a {
+  color: #0071c5;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+/* Intel logo styling and positioning (Intel branding) */
+.intel-logo {
+  width: 130px;
+  height: auto;
+  position: absolute;
+  top: 16px;
+  left: 28px;
+}
+
+/* Logical property for button alignment */
+.align-self-start {
+  align-self: flex-start !important;
+}
+
+/* Hide RTL by default, enable via JS if needed */
+[dir="rtl"] .intel-logo {
+  left: unset;
+  right: 28px;
+}
+
+/* Timeline section uses flexbox to center content vertically */
+section {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: visible;
+}
+
+/* Card styles for timeline */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 16px;
+  margin: 16px;
+  max-width: 300px;
+  display: inline-block;
+  vertical-align: top;
+  transition: box-shadow 0.2s; /* Smooth hover effect */
+  position: relative;
+  box-sizing: border-box;
+  overflow-y: visible;
+}
+
+/* Hover effect: card shadow gets bigger when hovered */
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Overlay that appears on card hover */
+.card .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 113, 197, 0.95); /* Intel blue overlay */
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  padding: 20px 10px;
+  text-align: center;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Show overlay on hover (hover effect) */
+.card:hover .card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card .card-overlay p {
+  color: #fff;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.5;
+  width: 100%;
+  word-break: break-word;
+  white-space: normal;
+  text-align: center;
+}
+
+/* Hide the normal <p> description in the card */
+.card > p {
+  display: none;
+}
+
+/* Hero section with Intel blue shadow (Intel branding) */
+.hero {
+  background: none;
+  color: #fff;
+  padding: 60px 20px 40px 20px;
+  text-align: center;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 24px rgba(0,113,197,0.10);
+  position: relative;
+  margin-bottom: 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.hero h1 {
+  font-size: 3.2em;
+  margin-bottom: 18px;
+  margin-top: 9px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+.hero p {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  opacity: 0.98;
+  font-weight: 500;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* Media query for medium screens (responsive design) */
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 2.4em;
+  }
+  .hero p {
+    font-size: 1.2em;
+    max-width: 90vw;
+  }
+  .intel-logo {
+    width: 110px;
+  }
+}
+
+/* Info text at bottom, uses Intel blue (Intel branding) */
+.info-text {
+  text-align: center;
+  font-size: 1.25em;
+  color: #0071c5;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  background: #e6f2fb;
+  padding: 12px 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,113,197,0.06);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  z-index: 100;
+}
+
+/* Card images are all the same size */
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Milestone card styles with Intel blue border (Intel branding) */
+.milestone-card {
+  background: #f5f7fa;
+  border: 2px solid #0071c5;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.08);
+  padding: 18px 16px;
+  margin: 18px 0;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+.milestone-card h3 {
+  color: #0071c5;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.milestone-card p {
+  color: #333;
+  margin-bottom: 0;
+}
+.milestone-card:hover {
+  box-shadow: 0 4px 20px rgba(0,113,197,0.15);
+  border-color: #005b99;
+}
+
+/* Timeline uses flexbox for horizontal scrolling (flexbox layout) */
+.timeline {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 32px 20px;
+  padding: 0 10px 12px 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory; /* Enables horizontal scroll snap */
+}
+
+/* Timeline items use scroll snap for smooth navigation */
+.timeline .milestone-card,
+.timeline .card {
+  flex: 0 0 300px;
+  min-width: 220px;
+  max-width: 340px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+/* Hide the horizontal scrollbar except when hovered or scrolling */
+.timeline::-webkit-scrollbar {
+  height: 8px;
+  background: transparent;
+}
+.timeline::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.timeline:hover::-webkit-scrollbar,
+.timeline:active::-webkit-scrollbar,
+.timeline:focus::-webkit-scrollbar {
+  background: #f5f7fa;
+}
+.timeline:hover::-webkit-scrollbar-thumb,
+.timeline:active::-webkit-scrollbar-thumb,
+.timeline:focus::-webkit-scrollbar-thumb {
+  background: #0071c5;
+}
+
+/* For Firefox: thin scrollbar and color on hover */
+.timeline {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.timeline:hover,
+.timeline:focus,
+.timeline:active {
+  scrollbar-color: #0071c5 #f5f7fa;
+}
+
+/* Media query for small screens (responsive design) */
+@media (max-width: 700px) {
+  .hero {
+    padding: 28px 18px 18px 18px;
+    position: relative;
+    max-height: 30vh; /* Hero section never takes up more than 30% of screen height */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snap for smoother navigation */
+  }
+  .hero > * {
+    scroll-snap-align: start; /* Snap each child to the top when scrolling */
+  }
+  .hero h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 60px;
+  }
+  .hero p {
+    font-size: 1em;
+    max-width: 95vw;
+  }
+  .intel-logo {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    width: 90px;
+    margin: 0;
+    display: block;
+    max-width: 100vw;
+  }
+  .timeline {
+    flex-direction: column; /* Stack cards vertically on small screens */
+    gap: 16px;
+    align-items: stretch;
+    overflow-x: visible;
+    white-space: normal;
+  }
+  .timeline .milestone-card,
+  .timeline .card {
+    max-width: 340px;
+    width: 95vw;
+    margin: 0 auto 16px auto;
+  }
+}
+
+/* Style headings in header/hero only (Intel branding) */
+header h1, header h2, header h3,
+.hero h1, .hero h2, .hero h3 {
+  color: #fff;
+}
+
+/* Style headings in cards and main content (Intel blue) */
+.card h2, .milestone-card h2 {
+  color: #0071c5;
+  font-size: 2em;
+  margin-bottom: 6px;
+}
+.card h3, .milestone-card h3 {
+  color: #0071c5;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+/* Full-width light grey background for subscription form section */
+.container-fluid {
+  background: #e0e0e0;
+  width: 100%;
+  padding: 40px 0 40px 0; /* Add vertical padding for space */
+  margin: 0;
+  box-sizing: border-box;
+}
+.container-fluid > h2,
+.container-fluid > form {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Media query for screens <=400px to ensure symmetric horizontal padding */
+@media (max-width: 400px) {
+  .container,
+  .container-fluid,
+  .timeline,
+  .hero {
+    padding-left: 10px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box;
+  }
+  .timeline {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container-fluid > h2,
+  .container-fluid > form {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+}
