@@ -62,6 +62,14 @@ button:hover, .btn:hover {
   background-color: #005b99;
 }
 
+/* Hover effect for 'Learn More' buttons in 3-column section */
+.col-md-4 .btn-info.align-self-start:hover {
+  background-color: #005b99 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(0,113,197,0.15);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
 /* Footer styling */
 footer {
   background-color: #222;
@@ -210,20 +218,6 @@ section {
   line-height: 1.5;
 }
 
-/* Media query for medium screens (responsive design) */
-@media (max-width: 900px) {
-  .hero h1 {
-    font-size: 2.4em;
-  }
-  .hero p {
-    font-size: 1.2em;
-    max-width: 90vw;
-  }
-  .intel-logo {
-    width: 110px;
-  }
-}
-
 /* Info text at bottom, uses Intel blue (Intel branding) */
 .info-text {
   text-align: center;
@@ -341,6 +335,67 @@ section {
   scrollbar-color: #0071c5 #f5f7fa;
 }
 
+/* Style headings in header/hero only (Intel branding) */
+header h1, header h2, header h3,
+.hero h1, .hero h2, .hero h3 {
+  color: #fff;
+}
+
+/* Style headings in cards and main content (Intel blue) */
+.card h2, .milestone-card h2 {
+  color: #0071c5;
+  font-size: 2em;
+  margin-bottom: 6px;
+}
+.card h3, .milestone-card h3 {
+  color: #0071c5;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+/* Fixed h2 font size for 3-column cards */
+.col-md-4 h2 {
+  font-size: 1.35em;
+}
+
+/* Full-width light grey background for subscription form section */
+.container-fluid {
+  background: #e0e0e0;
+  width: 100%;
+  padding: 40px 0 40px 0; /* Add vertical padding for space */
+  margin: 0;
+  box-sizing: border-box;
+}
+.container-fluid > h2,
+.container-fluid > form {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Media query for medium screens (responsive design) */
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 2.4em;
+  }
+  .hero p {
+    font-size: 1.2em;
+    max-width: 90vw;
+  }
+  .intel-logo {
+    width: 110px;
+  }
+  .col-md-4 > div {
+    max-width: 380px;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .col-md-4 h2 {
+    font-size: 1.18em;
+  }
+}
+
 /* Media query for small screens (responsive design) */
 @media (max-width: 700px) {
   .hero {
@@ -384,39 +439,9 @@ section {
     width: 95vw;
     margin: 0 auto 16px auto;
   }
-}
-
-/* Style headings in header/hero only (Intel branding) */
-header h1, header h2, header h3,
-.hero h1, .hero h2, .hero h3 {
-  color: #fff;
-}
-
-/* Style headings in cards and main content (Intel blue) */
-.card h2, .milestone-card h2 {
-  color: #0071c5;
-  font-size: 2em;
-  margin-bottom: 6px;
-}
-.card h3, .milestone-card h3 {
-  color: #0071c5;
-  font-size: 1.25em;
-  margin-bottom: 10px;
-  margin-top: 0;
-}
-
-/* Full-width light grey background for subscription form section */
-.container-fluid {
-  background: #e0e0e0;
-  width: 100%;
-  padding: 40px 0 40px 0; /* Add vertical padding for space */
-  margin: 0;
-  box-sizing: border-box;
-}
-.container-fluid > h2,
-.container-fluid > form {
-  padding-left: 16px;
-  padding-right: 16px;
+  .col-md-4 h2 {
+    font-size: 1.08em;
+  }
 }
 
 /* Media query for screens <=400px to ensure symmetric horizontal padding */
@@ -437,5 +462,15 @@ header h1, header h2, header h3,
   .container-fluid > form {
     padding-left: 0;
     padding-right: 15px;
+  }
+}
+
+/* Media query for screens wider than 700px */
+@media (min-width: 701px) {
+  .hero h1 {
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 }
